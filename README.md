@@ -1,2 +1,2 @@
 # Repo-1-Ia
-holaaa
+This is the firs exercice with objects whe do in our class 
