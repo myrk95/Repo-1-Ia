@@ -4,7 +4,7 @@ class Bus:
     def __init__(self, identificador, total_seients):
         self.identificador = identificador
         self.total_seients = total_seients
-        self.clients = []  # llista d'objectes Client
+        self.clients = []  
 
     def venda(self, nom, cognom):
         if len(self.clients) >= self.total_seients:
