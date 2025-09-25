@@ -1,7 +1,7 @@
-class Cliente:
-    def __init__(self, nombre, apellido):
-        self.nombre = nombre
-        self.apellido = apellido
+class Client:
+    def __init__(self, nom, cognom):
+        self.nom = nom
+        self.cognom = cognom
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido}"
+        return f"{self.nom} {self.cognom}"

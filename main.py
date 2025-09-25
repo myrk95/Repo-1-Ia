@@ -1,67 +1,67 @@
 from bus import Bus
 
-buses = []
-print("=== Sistema de Buses ===")
+busos = []
+print("=== Sistema de Gestió de Busos ===")
 
 while True:
     print("\n1.- Crear bus")
-    print("2.- Venta de billetes")
-    print("3.- Devolución de billetes")
-    print("4.- Estado de un bus")
-    print("5.- Estado de TODOS los buses")
-    print("0.- Salir")
+    print("2.- Venda de bitllets")
+    print("3.- Devolució de bitllets")
+    print("4.- Estat d'un bus")
+    print("5.- Estat de TOTS els busos")
+    print("0.- Sortir")
 
     try:
-        opcion = int(input("Opción: "))
+        opcio = int(input("Opció: "))
     except ValueError:
-        print("Debes ingresar un número.")
+        print("Has d'introduir un número.")
         continue
 
-    if opcion == 0:
-        print("Saliendo del sistema...")
+    if opcio == 0:
+        print("Sortint del sistema...")
         break
 
-    elif opcion == 1:
+    elif opcio == 1:
         ident = input("ID del bus: ")
-        total = int(input("Número de asientos: "))
-        buses.append(Bus(ident, total))
-        print(f"Bus {ident} creado con {total} asientos.")
+        total = int(input("Nombre de seients: "))
+        busos.append(Bus(ident, total))
+        print(f"Bus {ident} creat amb {total} seients.")
 
-    elif opcion == 2:
+    elif opcio == 2:
         ident = input("ID del bus: ")
-        nombre = input("Nombre del cliente: ")
-        apellido = input("Apellido del cliente: ")
+        nom = input("Nom del client: ")
+        cognom = input("Cognom del client: ")
 
-        for bus in buses:
+        for bus in busos:
             if bus.identificador == ident:
-                print(bus.venta(nombre, apellido))
+                print(bus.venda(nom, cognom))
                 break
         else:
-            print("Error: bus no encontrado.")
+            print("Error: bus no trobat.")
 
-    elif opcion == 3:
+    elif opcio == 3:
         ident = input("ID del bus: ")
-        nombre = input("Nombre del cliente: ")
-        apellido = input("Apellido del cliente: ")
+        nom = input("Nom del client: ")
+        cognom = input("Cognom del client: ")
 
-        for bus in buses:
+        for bus in busos:
             if bus.identificador == ident:
-                print(bus.devolucion(nombre, apellido))
+                print(bus.devolucio(nom, cognom))
                 break
         else:
-            print("Error: bus no encontrado.")
+            print("Error: bus no trobat.")
 
-    elif opcion == 4:
+    elif opcio == 4:
         ident = input("ID del bus: ")
-        for bus in buses:
+        for bus in busos:
             if bus.identificador == ident:
-                print(bus.estado())
+                print(bus.estat())
                 break
         else:
-            print("Error: bus no encontrado.")
+            print("Error: bus no trobat.")
 
-    elif opcion == 5:
-        if not buses:
-            print("No hay buses registrados.")
-        for bus in buses:
-            print(bus.estado())
+    elif opcio == 5:
+        if not busos:
+            print("No hi ha busos registrats.")
+        for bus in busos:
+            print(bus.estat())

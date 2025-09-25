@@ -1,29 +1,29 @@
-from cliente import Cliente
+from cliente import Client
 
 class Bus:
-    def __init__(self, identificador, total_asientos):
+    def __init__(self, identificador, total_seients):
         self.identificador = identificador
-        self.total_asientos = total_asientos
-        self.pasajeros = []  # lista de objetos Cliente
+        self.total_seients = total_seients
+        self.clients = []  # llista d'objectes Client
 
-    def venta(self, nombre, apellido):
-        if len(self.pasajeros) >= self.total_asientos:
-            return "Error: no hay asientos libres."
-        cliente = Cliente(nombre, apellido)
-        self.pasajeros.append(cliente)
-        return f"Se vendió un billete a {cliente}"
+    def venda(self, nom, cognom):
+        if len(self.clients) >= self.total_seients:
+            return "Error: no hi ha seients lliures."
+        client = Client(nom, cognom)
+        self.clients.append(client)
+        return f"S'ha venut un bitllet a {client}"
 
-    def devolucion(self, nombre, apellido):
-        for c in self.pasajeros:
-            if c.nombre == nombre and c.apellido == apellido:
-                self.pasajeros.remove(c)
-                return f"Se devolvió el billete de {c}"
-        return "Error: ese cliente no existe en la lista."
+    def devolucio(self, nom, cognom):
+        for c in self.clients:
+            if c.nom == nom and c.cognom == cognom:
+                self.clients.remove(c)
+                return f"S'ha retornat el bitllet de {c}"
+        return "Error: aquest client no existeix a la llista."
 
-    def estado(self):
-        libres = self.total_asientos - len(self.pasajeros)
+    def estat(self):
+        lliures = self.total_seients - len(self.clients)
         return (f"Bus {self.identificador}\n"
-                f"Total: {self.total_asientos}\n"
-                f"Libre: {libres}\n"
-                f"Vendido: {len(self.pasajeros)}\n"
-                f"Clientes: {[str(c) for c in self.pasajeros]}")
+                f"Total: {self.total_seients}\n"
+                f"Lliures: {lliures}\n"
+                f"Venuts: {len(self.clients)}\n"
+                f"Clients: {[str(c) for c in self.clients]}")
